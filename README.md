@@ -8,6 +8,9 @@ The way this repo works is that each language has a separate index, as is the ca
 
 ## Results
 
+Here are my results, which are a lot better on BM25. I'm not sure if I did something different from them, but the English results being exactly the same seem to point out the problem is more on the use of other languages and the BM25 they used. 
+
+
 |      |   BM25 from paper |   M3-All from paper |   BM25-Anserini with analyzer |   BM25-Anserini without analyzer |
 |:-----|------------------:|--------------------:|------------------------------:|---------------------------------:|
 | ar   |              16   |                64.7 |                          57   |                             67   |
@@ -32,17 +35,17 @@ The way this repo works is that each language has a separate index, as is the ca
 * Run indexing and retrieval with run_all.sh. That should take a half an hour to run.
 * Condensate results and print with MergeEval.
 
-Which shows greatly improveed results with BM25. I'm not sure if I did something different from them, but the English results being exactly the same seem to point out the problem is more on the use of other languages and the BM25 they used. 
+## Installation
+
+There's a requirements file for the python part and you need to download the anserini fatjar for running the java commands.
+
+## Note on "Which BM25"
 
 I would like to note that the "Which BM25 problem" is a common thing to happen, and that going outside of English evaluation increases such problems. For a showcase on the "Which BM25 problem":
 
 Kamphuis, C., de Vries, A.P., Boytsov, L., Lin, J. (2020). Which BM25 Do You Mean? A Large-Scale Reproducibility Study of Scoring Variants. In: Jose, J., et al. Advances in Information Retrieval. ECIR 2020. Lecture Notes in Computer Science(), vol 12036. Springer, Cham. https://doi.org/10.1007/978-3-030-45442-5_4
 
 On the case of non-english bm25, multiple problems can happen. For example it is common that in zh there could be a mismatch between documents and queries where some use Traditional and other Simple variants of the written language, making it hard to do lexical match. 
-
-## Installation
-
-There's a requirements file for the python part and you need to download the anserini fatjar for running the java commands.
 
 ## EXTRA: Experiment with fused index
 
