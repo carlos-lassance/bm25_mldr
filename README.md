@@ -1,4 +1,4 @@
-#BM25 for MLDR
+# BM25 for MLDR
 
 This is a quick repo for testing BM25 for MLDR. It was prompted by the results published in [M3](https://arxiv.org/pdf/2402.03216.pdf) where the English results for BM25 are good, but not other languages.
 
